@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" prefHeight="315.0" prefWidth="328.0" spacing="20.0" style="-fx-background-color: #401F71;"
+      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.eduapp.edumanagerapp.Controller.Registrasi">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Label alignment="CENTER" prefHeight="32.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Sign Up"
+           textAlignment="JUSTIFY" wrapText="true">
+        <font>
+            <Font name="JetBrains Mono SemiBold" size="24.0"/>
+        </font>
+    </Label>
+    <VBox prefHeight="113.0" prefWidth="288.0">
+        <children>
+            <Label style="-fx-text-fill: white;" text="Name"/>
+            <TextField fx:id="username" promptText="John Doe"/>
+            <Label style="-fx-text-fill: white;" text="Password"/>
+            <PasswordField fx:id="password" promptText="******"/>
+        </children>
+    </VBox>
+    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onRegistrasiButtonClick"
+            prefHeight="24.0" prefWidth="213.0" style="-fx-background-color: white; -fx-text-fill: #401F71;"
+            text="Sign Up" textAlignment="CENTER">
+        <font>
+            <Font name="JetBrains Mono Bold" size="17.0"/>
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </Button>
+    <Button mnemonicParsing="false" onAction="#SwitchToLogin" prefHeight="25.0" prefWidth="209.0"
+            style="-fx-background-color: transparent; -fx-text-fill: white;" text=" have an account ?">
+        <font>
+            <Font name="JetBrains Mono Regular" size="12.0"/>
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </Button>
+
+</VBox>

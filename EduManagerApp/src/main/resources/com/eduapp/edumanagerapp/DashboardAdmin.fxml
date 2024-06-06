@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="dashboard" prefHeight="477.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eduapp.edumanagerapp.Controller.DashboardAdmin">
+    <left>
+        <!-- Sidebar -->
+        <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="186.0" spacing="10"
+              style="-fx-background-color: white; -fx-padding: 20; -fx-spacing: 50;">
+            <VBox alignment="CENTER" style="-fx-spacing: 10;">
+                <ImageView fitHeight="64.0" fitWidth="64.0" preserveRatio="true">
+                    <image>
+                        <Image url="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"/>
+                    </image>
+                </ImageView>
+                <Label fx:id="username" alignment="CENTER" prefHeight="17.0" prefWidth="158.0" textAlignment="CENTER"
+                       textFill="#401f71" wrapText="true">
+                    <font>
+                        <Font name="JetBrains Mono Regular" size="21.0"/>
+                    </font>
+                </Label>
+                <Button onAction="#OnClickButtonDashboard" prefHeight="25.0" prefWidth="171.0"
+                        style="-fx-background-color: #401F71;" text="Home" textFill="WHITE">
+                    <font>
+                        <Font name="JetBrains Mono Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button onAction="#onClickTableAbsen" prefHeight="25.0" prefWidth="162.0"
+                        style="-fx-background-color: #401F71;" text="Attendance" textFill="WHITE" textOverrun="CLIP"
+                        wrapText="true">
+                    <font>
+                        <Font name="JetBrains Mono Regular" size="10.0"/>
+                    </font>
+                </Button>
+                <Button onAction="#onClickTableKas" prefHeight="25.0" prefWidth="162.0"
+                        style="-fx-background-color: #401F71;" text="Kas" textFill="WHITE">
+                    <font>
+                        <Font name="JetBrains Mono Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button onAction="#onClickButtonShowFormGantiPassword" prefHeight="25.0" prefWidth="162.0"
+                        style="-fx-background-color: #401F71;" text="Change Password" textFill="WHITE">
+                    <font>
+                        <Font name="JetBrains Mono Regular" size="12.0"/>
+                    </font>
+                </Button>
+            </VBox>
+            <Button alignment="BOTTOM_CENTER" onAction="#onClickLogout" prefHeight="25.0" prefWidth="157.0"
+                    style="-fx-background-color: #401F71;" text="Logout" textFill="WHITE">
+                <font>
+                    <Font name="JetBrains Mono Regular" size="12.0"/>
+                </font>
+            </Button>
+
+        </VBox>
+    </left>
+    <center>
+        <!-- Main Content -->
+        <VBox alignment="CENTER" prefHeight="450.0" prefWidth="414.0"
+              style="-fx-padding: 20; -fx-spacing: 20; -fx-background-color: #401F71;">
+            <ListView fx:id="chatListView" prefHeight="354.0" prefWidth="374.0"
+                      style="-fx-background-color: transparent;">
+            </ListView>
+            <HBox fx:id="chatHBox" alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0"
+                  style="-fx-spacing: 20;">
+                <children>
+                    <TextArea fx:id="chatTextArea" prefHeight="92.0" prefWidth="301.0" promptText="Hai Teman"
+                              wrapText="true">
+                        <font>
+                            <Font name="JetBrains Mono Regular" size="13.0"/>
+                        </font>
+                    </TextArea>
+                    <Button mnemonicParsing="false" onAction="#onSendButtonClick" prefHeight="25.0" prefWidth="89.0"
+                            style="-fx-background-color: white;" text="Send" textFill="#401F71"/>
+                </children>
+            </HBox>
+            <VBox fx:id="FormGantiPassword" alignment="CENTER" prefHeight="153.0" prefWidth="345.0" spacing="10.0"
+                  style="-fx-background-color: white;">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                </padding>
+                <Label alignment="CENTER" prefHeight="32.0" prefWidth="300.0" style="-fx-text-fill: #401F71;"
+                       text="Change Password" textAlignment="JUSTIFY" wrapText="true">
+                    <font>
+                        <Font name="JetBrains Mono SemiBold" size="24.0"/>
+                    </font>
+                </Label>
+                <VBox prefHeight="113.0" prefWidth="288.0">
+                    <children>
+                        <Label style="-fx-text-fill: #401F71;" text="Password"/>
+                        <PasswordField fx:id="inputPassword" promptText="******"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="174.0" prefWidth="288.0" style="-fx-spacing: 10;">
+                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                            onAction="#onClickGantiPassword" prefHeight="24.0" prefWidth="213.0"
+                            style="-fx-background-color: #401F71; -fx-text-fill: white;" text="Change"
+                            textAlignment="CENTER">
+                        <font>
+                            <Font name="JetBrains Mono Bold" size="17.0"/>
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </Button>
+                </VBox>
+            </VBox>
+            <TableView fx:id="tableAbsen" prefHeight="200.0" prefWidth="200.0"/>
+            <TableView fx:id="tableKas" prefHeight="200.0" prefWidth="200.0"/>
+        </VBox>
+    </center>
+</BorderPane>
